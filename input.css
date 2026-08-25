@@ -1,14 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 @import "tailwindcss";
 
 @theme {
-    --font-poppins: "Poppins", sans-serif;
+  --font-poppins: "Plus Jakarta Sans", "Poppins", sans-serif;
+  --color-emerald-950: #041d15;
+  --color-emerald-900: #062c20;
+  --color-emerald-800: #094733;
 }
 
-body {
-    @apply bg-black text-white text-sm font-poppins antialiased;
-}
+@layer base {
+  body {
+    @apply bg-[#05110d] text-slate-100 text-sm font-poppins antialiased selection:bg-emerald-500 selection:text-black overflow-x-hidden;
+  }
 
-button {
+  button {
     @apply cursor-pointer;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #05110d;
+}
+::-webkit-scrollbar-thumb {
+  background: #10b981;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #34d399;
+}
+
+/* Glassmorphism Card Utilities */
+.glass-card {
+  background: rgba(13, 34, 27, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(52, 211, 153, 0.15);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card-hover:hover {
+  border-color: rgba(52, 211, 153, 0.4);
+  box-shadow: 0 12px 30px -10px rgba(16, 185, 129, 0.25);
+  transform: translateY(-3px);
+}
+
+/* Animated Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #6ee7b7 0%, #10b981 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glow Background Effects */
+.glow-emerald {
+  box-shadow: 0 0 50px -10px rgba(16, 185, 129, 0.3);
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float-slow 4s ease-in-out infinite;
 }

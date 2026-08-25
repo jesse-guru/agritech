@@ -4,417 +4,593 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>agri-tech</title>
+    <title>AgriTech Pro | AI-Powered Precision Agriculture Platform</title>
     <link rel="stylesheet" href="./output.css">
-    <link rel="shortcut icon" href="https://i.pinimg.com/1200x/4d/ef/d8/4defd889ceaed5a6d1786e96906abb98.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>" type="image/svg+xml">
+    <!-- FontAwesome 6.5.1 CDN Fix -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
-    <nav
-        class="sticky top-0 z-50 flex items-center justify-between w-full h-18 px-6 md:px-16 lg:px-24 xl:px-32 backdrop-blur">
-       
-        <div class="hidden lg:flex items-center gap-8 transition duration-500">
-            <a href="#creations" class="hover:text-slate-300 transition">
-                Creations
-            </a>
-            <a href="#about" class="hover:text-slate-300 transition">
-                About
-            </a>
-            <a href="#testimonials" class="hover:text-slate-300 transition">
-                Testimonials
-            </a>
-            <a href="#contact" class="hover:text-slate-300 transition">
-                Contact
-            </a>
+<body class="bg-[#05110d] text-slate-100 antialiased font-poppins selection:bg-emerald-500 selection:text-black min-h-screen">
+    
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 flex items-center justify-between w-full h-20 px-6 md:px-16 lg:px-24 xl:px-32 bg-[#05110d]/80 backdrop-blur-md border-b border-emerald-900/30 transition-all duration-300">
+        <a href="#" class="flex items-center gap-3 group">
+            <div class="size-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white shadow-lg shadow-emerald-950/50 group-hover:scale-105 transition-transform">
+                <i class="fa-solid fa-leaf text-lg"></i>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-xl font-bold tracking-tight text-white flex items-center gap-1.5">
+                    AgriTech <span class="gradient-text font-black">PRO</span>
+                </span>
+                <span class="text-[10px] text-emerald-400 tracking-wider uppercase font-semibold">Precision Farming AI</span>
+            </div>
+        </a>
+
+        <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
+            <a href="#creations" class="hover:text-emerald-400 transition-colors">Creations</a>
+            <a href="#about" class="hover:text-emerald-400 transition-colors">Solutions</a>
+            <a href="#impact" class="hover:text-emerald-400 transition-colors">Impact</a>
+            <a href="#faq" class="hover:text-emerald-400 transition-colors">FAQ</a>
+            <a href="#contact" class="hover:text-emerald-400 transition-colors">Contact</a>
         </div>
-        <div class="hidden lg:block space-x-3">
-            <button
-                class="px-6 py-2 bg-indigo-600 hover:bg-indigo-700 transition text-white rounded-md active:scale-95">
-                Get started
+
+        <div class="hidden lg:flex items-center gap-4">
+            <button class="px-5 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-emerald-950/50 border border-transparent hover:border-emerald-800/40 rounded-lg transition-all">
+                Sign In
             </button>
-            <button
-                class="hover:bg-slate-300/20 transition px-6 py-2 border border-slate-400 rounded-md active:scale-95">
-                Login
+            <button class="px-6 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 rounded-lg shadow-lg shadow-emerald-900/40 active:scale-95 transition-all">
+                Get Started Free
             </button>
         </div>
-        <button class="lg:hidden active:scale-90 transition" id="menu-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-menu size-6.5" aria-hidden="true">
-                <path d="M4 5h16"></path>
+
+        <button class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-emerald-950/50 transition-colors" id="menu-button" aria-label="Toggle Navigation Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6">
+                <path d="M4 6h16"></path>
                 <path d="M4 12h16"></path>
-                <path d="M4 19h16"></path>
+                <path d="M4 18h16"></path>
             </svg>
         </button>
     </nav>
 
-    <div id="nav-links" class="fixed inset-0 z-[100] bg-black/60 backdrop-blur flex flex-col items-center justify-center text-lg gap-8 lg:hidden transition-transform duration-400 -translate-x-full">
-        <a href="/#creations">
-            Creations
-        </a>
-        <a href="/#about">
-            About
-        </a>
-        <a href="/#testimonials">
-            Testimonials
-        </a>
-        <a href="/#contact">
-            Contact
-        </a>
-        <button id="close-menu" class="active:ring-3 active:ring-white aspect-square size-10 p-1 items-center justify-center bg-slate-100 hover:bg-slate-200 transition text-black rounded-md flex">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-x" aria-hidden="true">
+    <!-- Mobile Drawer Menu -->
+    <div id="nav-links" class="fixed inset-0 z-[100] bg-[#040e0b]/95 backdrop-blur-xl flex flex-col items-center justify-center text-lg gap-6 lg:hidden transition-transform duration-300 -translate-x-full">
+        <div class="flex items-center gap-2 mb-4">
+            <div class="size-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white">
+                <i class="fa-solid fa-leaf text-lg"></i>
+            </div>
+            <span class="text-2xl font-bold text-white">AgriTech PRO</span>
+        </div>
+        <a href="#creations" class="hover:text-emerald-400 transition-colors py-1">Creations</a>
+        <a href="#about" class="hover:text-emerald-400 transition-colors py-1">Solutions</a>
+        <a href="#impact" class="hover:text-emerald-400 transition-colors py-1">Impact</a>
+        <a href="#faq" class="hover:text-emerald-400 transition-colors py-1">FAQ</a>
+        <a href="#contact" class="hover:text-emerald-400 transition-colors py-1">Contact</a>
+        
+        <div class="flex flex-col gap-3 w-64 mt-4">
+            <button class="w-full py-3 text-sm font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg shadow-lg">
+                Get Started Free
+            </button>
+            <button class="w-full py-3 text-sm font-medium text-slate-300 border border-slate-700 rounded-lg">
+                Sign In
+            </button>
+        </div>
+
+        <button id="close-menu" class="absolute top-6 right-6 p-2 text-slate-400 hover:text-white rounded-lg transition-colors" aria-label="Close Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M18 6 6 18"></path>
                 <path d="m6 6 12 12"></path>
             </svg>
         </button>
     </div>
-    
+
     <!-- Hero Section -->
-     <section class="flex flex-col items-center -mt-18">
-        <svg class="absolute -z-10 w-full -mt-40 md:mt-0" width="1440" height="676" viewBox="0 0 1440 676" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="-92" y="-948" width="1624" height="1624" rx="812" fill="url(#a)"></rect>
-            <defs>
-                <radialGradient id="a" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                    gradientTransform="rotate(90 428 292)scale(812)">
-                    <stop offset=".63" stop-color="#372AAC" stop-opacity="0"></stop>
-                    <stop offset="1" stop-color="#372AAC"></stop>
-                </radialGradient>
-            </defs>
-        </svg>
-        <a class="flex items-center mt-48 gap-2 border border-slate-600 text-gray-50 rounded-full px-4 py-2">
-            <div class="size-2.5 bg-green-500 rounded-full animate-pulse"></div>
-           
+    <section class="relative pt-12 pb-24 px-6 md:px-16 lg:px-24 xl:px-32 flex flex-col items-center overflow-hidden">
+        <!-- Background Glowing Orbs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[600px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+        <div class="absolute top-1/3 left-1/4 size-[350px] bg-teal-500/10 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+
+        <!-- Announcement Pill Fix -->
+        <a href="#demo" class="demo-trigger inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-950/60 text-emerald-300 text-xs font-medium hover:border-emerald-400 hover:bg-emerald-900/60 transition-all shadow-sm mb-6 cursor-pointer group">
+            <span class="size-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>🌱 AI Precision Agriculture 2.0 Released</span>
+            <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
         </a>
-        <h1 class="text-center text-5xl leading-[68px] md:text-6xl md:leading-[70px] mt-4 font-semibold max-w-2xl">
-            Let's grow our agricultural potential together
+
+        <h1 class="text-center text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15] max-w-4xl">
+            Empowering Farmers with <br class="hidden sm:inline">
+            <span class="gradient-text">AI-Driven Precision Intelligence</span>
         </h1>
-        <p class="text-center text-base max-w-lg mt-2">
-            Our platform helps you learn modern agricultural techniques, connect with experts, and access resources to boost your farming success.
+
+        <p class="text-center text-slate-300 text-base sm:text-lg max-w-2xl mt-5 leading-relaxed font-light">
+            Optimize crop yields, monitor soil health in real-time, automate irrigation, and connect with agricultural experts through our next-generation smart farming platform.
         </p>
-        <div class="flex items-center gap-4 mt-8">
-            <button class="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 transition text-white active:scale-95 rounded-lg px-7 h-11">
-                Get started
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right size-5" aria-hidden="true">
-                    <path d="M5 12h14"></path>
-                    <path d="m12 5 7 7-7 7"></path>
-                </svg>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4 mt-9">
+            <button class="w-full sm:w-auto flex items-center justify-center gap-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-semibold px-8 h-12 rounded-xl shadow-lg shadow-emerald-900/40 active:scale-95 transition-all">
+                <span>Start Free Trial</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
             </button>
-            <button class="border border-slate-400 active:scale-95 hover:bg-white/10 transition rounded-lg px-8 h-11">
-                Book a demo
+            <button class="demo-trigger w-full sm:w-auto flex items-center justify-center gap-2.5 border border-emerald-700/50 hover:bg-emerald-950/40 text-slate-200 font-medium px-8 h-12 rounded-xl active:scale-95 transition-all">
+                <i class="fa-solid fa-circle-play text-emerald-400 text-base"></i>
+                <span>Watch 2-Min Demo</span>
             </button>
         </div>
-        <figure class="relative w-full h-full [perspective:800px] mt-16 max-w-4xl mx-auto flex flex-col items-center justify-center">
-            <div class="relative [transform-style:preserve-3d] w-full max-w-4xl">
-                <img class="w-full rounded-[15px] will-change-transform [transform:translateZ(0)]" alt="hero section showcase" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/hero-section-showcase-2.png" />
+
+        <!-- Hero Showcase Photo & Live Mockup Badges -->
+        <div class="relative w-full max-w-5xl mt-14 rounded-2xl p-2 bg-gradient-to-b from-emerald-500/20 via-teal-900/10 to-transparent border border-emerald-500/20 shadow-2xl">
+            <div class="relative rounded-xl overflow-hidden bg-slate-900 aspect-[16/9] shadow-inner group">
+                <img class="w-full h-full object-cover object-center transform group-hover:scale-[1.02] transition-transform duration-700" 
+                     alt="Smart Agriculture Telemetry Dashboard" 
+                     src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?q=80&w=1200&auto=format&fit=crop" />
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-[#05110d] via-transparent to-black/20"></div>
+
+                <!-- Floating Glass Mockup Stats -->
+                <div class="absolute top-6 left-6 glass-card p-3 rounded-xl flex items-center gap-3 animate-float border border-emerald-400/30 hidden sm:flex">
+                    <div class="size-9 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+                        <i class="fa-solid fa-droplet text-base"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-medium">Soil Moisture (Zone A)</p>
+                        <p class="text-sm font-bold text-emerald-300">68% — Optimal Field Capacity</p>
+                    </div>
+                </div>
+
+                <div class="absolute bottom-6 left-6 glass-card p-3.5 rounded-xl flex items-center gap-3 border border-emerald-400/30 hidden sm:flex">
+                    <div class="size-9 rounded-lg bg-teal-500/20 flex items-center justify-center text-teal-300">
+                        <i class="fa-solid fa-chart-line text-base"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-medium">Predicted Harvest Yield</p>
+                        <p class="text-sm font-bold text-teal-200">+38% YoY Increase</p>
+                    </div>
+                </div>
+
+                <div class="absolute top-6 right-6 glass-card p-3 rounded-xl flex items-center gap-3 border border-emerald-400/30 hidden sm:flex">
+                    <div class="size-9 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400">
+                        <i class="fa-solid fa-sun text-base"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-medium">Microclimate AI Alert</p>
+                        <p class="text-sm font-bold text-amber-300">No Frost Risk Detected</p>
+                    </div>
+                </div>
             </div>
-        </figure>
+        </div>
     </section>
 
-    <!-- Our Creations Section -->
-    <section class="flex flex-col items-center" id="creations">
-        <div class="flex flex-col items-center mt-32">
-            <h2 class="text-center text-4xl font-semibold max-w-2xl">
-                Our latest
-                <span class="bg-gradient-to-t from-indigo-600 to-black p-1 bg-left inline-block bg-no-repeat">project</span>
+    <!-- Live Impact Stats Section -->
+    <section class="border-y border-emerald-900/30 bg-emerald-950/20 py-12 px-6 md:px-16 lg:px-24" id="impact">
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div class="flex flex-col items-center">
+                <span class="text-3xl sm:text-4xl font-extrabold text-emerald-400 tracking-tight">50,000+</span>
+                <span class="text-xs sm:text-sm text-slate-400 font-medium mt-1">Active Farmers</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-3xl sm:text-4xl font-extrabold text-teal-300 tracking-tight">+35%</span>
+                <span class="text-xs sm:text-sm text-slate-400 font-medium mt-1">Average Yield Increase</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-3xl sm:text-4xl font-extrabold text-emerald-400 tracking-tight">1.2M+</span>
+                <span class="text-xs sm:text-sm text-slate-400 font-medium mt-1">Acres Monitored</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-3xl sm:text-4xl font-extrabold text-amber-400 tracking-tight">99.4%</span>
+                <span class="text-xs sm:text-sm text-slate-400 font-medium mt-1">AI Diagnostic Accuracy</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Creations & Projects Section -->
+    <section class="py-24 px-6 md:px-16 lg:px-24 xl:px-32 flex flex-col items-center" id="creations">
+        <div class="text-center max-w-2xl">
+            <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/60 border border-emerald-800/40 px-3.5 py-1 rounded-full">Portfolio Showcase</span>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mt-4">
+                Pioneering <span class="gradient-text">AgriTech Innovations</span>
             </h2>
-            <p class="text-center text-slate-400 max-w-lg mt-3">
-                A visual collection of our most recent works
+            <p class="text-slate-400 text-sm sm:text-base mt-3 leading-relaxed">
+                Explore our recent field deployments empowering smallholders and large-scale agricultural enterprises.
             </p>
         </div>
-        <div class="flex items-center gap-4 h-100 w-full max-w-5xl mt-18 mx-auto">
-            <div class="relative group flex-grow h-[400px] rounded-xl overflow-hidden hover:w-full w-56 transition-all duration-500">
-                <img class="h-full w-full object-cover object-center" alt="Prompt engineers"
-                    src="https://i.pinimg.com/1200x/30/c0/92/30c0928228eb413847c3f1f2e74fef14.jpg" />
-                <div class="absolute inset-0 flex flex-col justify-end p-10 text-white bg-black/50 transition-all duration-300 opacity-0 group-hover:opacity-100">
-                    <h1 class="text-3xl font-semibold">Boosting Sustainable Food Production.</h1>
-                    <p class="text-sm mt-2">
-                         The objective of the Action is agricultural smallholders’ crop production and access to sustainable agricultural inputs , technologies and services enhanced.
-                    </p>
-                </div>
-            </div>
-            <div class="relative group flex-grow h-[400px] rounded-xl overflow-hidden hover:w-full w-56 transition-all duration-500">
-                <img class="h-full w-full object-cover object-right" alt="Data scientists"
-                    src="https://i.pinimg.com/1200x/91/50/a1/9150a164b3cf5767bc110fbaa88cf7dd.jpg" />
-                <div class="absolute inset-0 flex flex-col justify-end p-10 text-white bg-black/50 transition-all duration-300 opacity-0 group-hover:opacity-100">
-                    <h1 class="text-3xl font-semibold">Enhancement of Rice Production in Irrigation schemes</h1>
-                    <p class="text-sm mt-2">
-                        Turning data into actionable insights that drive intelligent
-                        innovation and growth.
-                    </p>
-                </div>
-            </div>
-            <div class="relative group flex-grow h-[400px] rounded-xl overflow-hidden hover:w-full w-56 transition-all duration-500">
-                <img class="h-full w-full object-cover object-center" alt="Software engineers"
-                    src="https://i.pinimg.com/1200x/16/43/24/164324807746afb52cd6341305eb32ce.jpg" />
-                <div class="absolute inset-0 flex flex-col justify-end p-10 text-white bg-black/50 transition-all duration-300 opacity-0 group-hover:opacity-100">
-                    <h1 class="text-3xl font-semibold">Livestock Commercialization Project</h1>
-                    <p class="text-sm mt-2">
-                        Increase income of more than 110000 poor livestock and pastrol households especially youth and women in an enviromentasl friendly manner in a selected project areas of the 10 participating counties
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section class="flex flex-col items-center" id="about">
-        <div class="flex flex-col items-center mt-32">
-            <h2 class="text-center text-4xl font-semibold max-w-2xl">
-                About our 
-                <span class="bg-gradient-to-t from-indigo-600 to-black p-1 bg-left inline-block bg-no-repeat">apps</span>
-            </h2>
-            <p class="text-center text-slate-400 max-w-lg mt-3">Inspire by offering food security and sustainable development in rural areas.</p>
+        <!-- Category Filter Tabs -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mt-8">
+            <button class="creation-filter-btn px-5 py-2 rounded-full text-xs font-semibold bg-emerald-600 text-white shadow-lg transition-all" data-category="all">
+                All Projects
+            </button>
+            <button class="creation-filter-btn px-5 py-2 rounded-full text-xs font-semibold bg-emerald-950/40 text-slate-300 hover:bg-emerald-900/60 transition-all border border-emerald-900/30" data-category="smart">
+                Smart Farming
+            </button>
+            <button class="creation-filter-btn px-5 py-2 rounded-full text-xs font-semibold bg-emerald-950/40 text-slate-300 hover:bg-emerald-900/60 transition-all border border-emerald-900/30" data-category="irrigation">
+                Irrigation
+            </button>
+            <button class="creation-filter-btn px-5 py-2 rounded-full text-xs font-semibold bg-emerald-950/40 text-slate-300 hover:bg-emerald-900/60 transition-all border border-emerald-900/30" data-category="livestock">
+                Livestock
+            </button>
         </div>
-        <div class="relative max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-8 md:px-0 mt-18">
-            <div class="py-10 border-b border-slate-700 md:py-0 md:border-r md:border-b-0 md:px-10">
-                <div class="size-10 p-2 bg-indigo-600/20 border border-indigo-600/30 rounded">
-                    <i class="fa-solid fa-building-columns"></i>
-                </div>
-                <div class="mt-5 space-y-2">
-                    <h3 class="text-base font-medium text-slate-200">Agricultural Financing</h3>
-                    <p class="text-sm text-slate-400">Self Help Africa is involved in, Asset-based Finance for Hydroponics</p>
-                </div>
-            </div>
-            <div class="py-10 border-b border-slate-700 md:py-0 lg:border-r md:border-b-0 md:px-10">
-                <div class="size-10 p-2 bg-indigo-600/20 border border-indigo-600/30 rounded">
-                  <i class="fa-solid fa-cow"></i>
-                </div>
-                <div class="mt-5 space-y-2">
-                    <h3 class="text-base font-medium text-slate-200">Livestock & Dairy</h3>
-                    <p class="text-sm text-slate-400">The, Smallholder Dairy Commercialization Programme, and, animal, health, services are key in, strengthening, rural, livelihoods.</p>
-                </div>
-            </div>
-            <div class="py-10 border-b border-slate-700 md:py-0 md:border-b-0 md:px-10">
-                <div class="size-10 p-2 bg-indigo-600/20 border border-indigo-600/30 rounded">
-                   <i class="fa-solid fa-building-wheat"></i>
-                </div>
-                <div class="mt-5 space-y-2">
-                    <h3 class="text-base font-medium text-slate-200">Cash Crops</h3>
-                    <p class="text-sm text-slate-400"> Promotion of high-value crops including, avocados, coffee, tea, and, bananas.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Testimonials Section -->
-    <section class="flex flex-col items-center" id="testimonials">
-        <div class="flex flex-col items-center mt-32">
-            <h2 class="text-center text-4xl font-semibold max-w-2xl">Our
-                <span class="bg-gradient-to-t from-indigo-600 to-black p-1 bg-left inline-block bg-no-repeat">testimonials</span>
-            </h2>
-           
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-18 max-w-6xl mx-auto">
-            <div class="group border border-slate-800 p-6 rounded-xl">
-                <p class="text-slate-100 text-base">I use the app daily to track my cows’ health and milk production. The reminders for vaccination and feeding schedules have helped me reduce losses. My farm is more organized and profitable than ever before.</p>
-                <div class="flex items-center gap-3 mt-8 group-hover:-translate-y-1 duration-300">
-                    <img class="size-10 rounded-full" alt="user image"
-                        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&amp;w=200">
-                    <div>
-                        <h2 class="text-gray-200 font-medium">Grace Wanjiku</h2>
-                        <p class="text-indigo-500">dairy farmer</p>
+        <!-- Fixed High-Res Image Gallery Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl mt-12">
+            <!-- Project 1 -->
+            <div class="creation-card group glass-card rounded-2xl overflow-hidden flex flex-col border border-emerald-500/20 glass-card-hover" data-category="smart">
+                <div class="relative h-60 overflow-hidden">
+                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                         alt="Precision Drone Spraying" 
+                         src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=800&auto=format&fit=crop" />
+                    <div class="absolute top-4 left-4 bg-emerald-950/80 backdrop-blur-md border border-emerald-500/30 text-emerald-300 text-[11px] font-semibold px-3 py-1 rounded-full">
+                        Smart Farming
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                        Autonomous Drone Crop Scanning
+                    </h3>
+                    <p class="text-slate-400 text-sm mt-2 leading-relaxed flex-1">
+                        Multispectral aerial imaging and AI computer vision detecting pest infestations and nitrogen deficiencies early.
+                    </p>
+                    <div class="mt-6 pt-4 border-t border-emerald-900/40 flex items-center justify-between">
+                        <span class="text-xs text-emerald-400 font-medium">98.2% Pest Accuracy</span>
+                        <span class="text-xs text-slate-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                            Read Case Study <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </span>
                     </div>
                 </div>
             </div>
-            <div class="group border border-slate-800 p-6 rounded-xl">
-                <p class="text-slate-100 text-base">Now I get pest control advice and market price updates in real time. I can decide when to harvest and sell for better profit. It has truly improved my income.
-                </p>
-                <div class="flex items-center gap-3 mt-8 group-hover:-translate-y-1 duration-300">
-                    <img class="size-10 rounded-full" alt="user image" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&amp;w=200">
-                    <div>
-                        <h2 class="text-gray-200 font-medium">Peter Otieno</h2>
-                        <p class="text-indigo-500">Vegetable Farmer</p>
+
+            <!-- Project 2 -->
+            <div class="creation-card group glass-card rounded-2xl overflow-hidden flex flex-col border border-emerald-500/20 glass-card-hover" data-category="irrigation">
+                <div class="relative h-60 overflow-hidden">
+                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                         alt="Automated Drip Irrigation System" 
+                         src="https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?q=80&w=800&auto=format&fit=crop" />
+                    <div class="absolute top-4 left-4 bg-emerald-950/80 backdrop-blur-md border border-emerald-500/30 text-emerald-300 text-[11px] font-semibold px-3 py-1 rounded-full">
+                        Irrigation
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                        Solar Smart Drip Automation
+                    </h3>
+                    <p class="text-slate-400 text-sm mt-2 leading-relaxed flex-1">
+                        IoT soil moisture sensors connected to solar pumps, reducing water consumption by 42% in rice and vegetable schemes.
+                    </p>
+                    <div class="mt-6 pt-4 border-t border-emerald-900/40 flex items-center justify-between">
+                        <span class="text-xs text-emerald-400 font-medium">-42% Water Saved</span>
+                        <span class="text-xs text-slate-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                            Read Case Study <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </span>
                     </div>
                 </div>
             </div>
-            <div class="group border border-slate-800 p-6 rounded-xl">
-                <p class="text-slate-100 text-base">The record-keeping feature is my favorite. I can track feed costs, egg production, and sales easily. I used to write everything in a notebook, but now everything is safe and organized on my phone.
-                </p>
-                <div class="flex items-center gap-3 mt-8 group-hover:-translate-y-1 duration-300">
-                    <img class="size-10 rounded-full" alt="user image"
-                        src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=200&amp;auto=format&amp;fit=crop&amp;q=60">
-                    <div>
-                        <h2 class="text-gray-200 font-medium">Ethan kamau</h2>
-                        <p class="text-indigo-500">Poultry Farmer</p>
+
+            <!-- Project 3 -->
+            <div class="creation-card group glass-card rounded-2xl overflow-hidden flex flex-col border border-emerald-500/20 glass-card-hover" data-category="livestock">
+                <div class="relative h-60 overflow-hidden">
+                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                         alt="Livestock Telemetry & Dairy Monitoring" 
+                         src="https://images.unsplash.com/photo-1546445317-29f4545f9d52?q=80&w=800&auto=format&fit=crop" />
+                    <div class="absolute top-4 left-4 bg-emerald-950/80 backdrop-blur-md border border-emerald-500/30 text-emerald-300 text-[11px] font-semibold px-3 py-1 rounded-full">
+                        Livestock
                     </div>
                 </div>
-            </div>
-            <div class="group border border-slate-800 p-6 rounded-xl">
-                <p class="text-slate-100 text-base">This app helped me identify early signs of crop disease through its advisory tips. I acted quickly and saved most of my crop. It’s reliable, easy to use, and very helpful for small-scale farmers like me.
-                </p>
-                <div class="flex items-center gap-3 mt-8 group-hover:-translate-y-1 duration-300">
-                    <img class="size-10 rounded-full" alt="user image"
-                        src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200&amp;auto=format&amp;fit=crop&amp;q=60">
-                    <div>
-                        <h2 class="text-gray-200 font-medium">Isabella Kimani</h2>
-                        <p class="text-indigo-500">Coffee Farmer</p>
-                    </div>
-                </div>
-            </div>
-            <div class="group border border-slate-800 p-6 rounded-xl">
-                <p class="text-slate-100 text-base">What I love most is the community feature. I can connect with other farmers, ask questions, and share experiences. It feels like being part of a supportive farming network that helps everyone grow.
-                </p>
-                <div class="flex items-center gap-3 mt-8 group-hover:-translate-y-1 duration-300">
-                    <img class="size-10 rounded-full" alt="user image"
-                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&amp;w=100&amp;h=100&amp;auto=format&amp;fit=crop">
-                    <div>
-                        <h2 class="text-gray-200 font-medium">Esther Achieng</h2>
-                        <p class="text-indigo-500">mixed farmer</p>
-                    </div>
-                </div>
-            </div>
-            <div class="group border border-slate-800 p-6 rounded-xl">
-                <p class="text-slate-100 text-base">This app has completely changed how I plan my planting season. I now receive timely weather updates and fertilizer recommendations, and my maize yield increased noticeably this year. It feels like having an agricultural expert in my pocket.
-                </p>
-                <div class="flex items-center gap-3 mt-8 group-hover:-translate-y-1 duration-300">
-                    <img class="size-10 rounded-full" alt="user image"
-                        src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/userImage/userImage1.png">
-                    <div>
-                        <h2 class="text-gray-200 font-medium">john wangai</h2>
-                        <p class="text-indigo-500">maize farmer</p>
+                <div class="p-6 flex flex-col flex-1">
+                    <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                        Livestock Health Telemetry
+                    </h3>
+                    <p class="text-slate-400 text-sm mt-2 leading-relaxed flex-1">
+                        Smart ear tags monitoring body temperature, rumination, and estrus detection for over 110,000 pastoral cattle households.
+                    </p>
+                    <div class="mt-6 pt-4 border-t border-emerald-900/40 flex items-center justify-between">
+                        <span class="text-xs text-emerald-400 font-medium">+28% Milk Production</span>
+                        <span class="text-xs text-slate-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                            Read Case Study <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trusted Companies Section -->
-    <section class="flex flex-col items-center">
-        <div class="flex flex-col items-center mt-32">
-            <h2 class="text-center text-4xl font-semibold max-w-2xl" style="opacity: 1; transform: none;">Trusted 
-                <span class="bg-gradient-to-t from-indigo-600 to-black p-1 bg-left inline-block bg-no-repeat">companies</span>
+    <!-- Solutions & Features Section -->
+    <section class="py-20 px-6 md:px-16 lg:px-24 xl:px-32 bg-emerald-950/10 border-t border-emerald-900/30" id="about">
+        <div class="text-center max-w-2xl mx-auto">
+            <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/60 border border-emerald-800/40 px-3.5 py-1 rounded-full">Core Platform Solutions</span>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mt-4">
+                Tailored Tools for <span class="gradient-text">Sustainable Agriculture</span>
             </h2>
-            
+            <p class="text-slate-400 text-sm sm:text-base mt-3 leading-relaxed">
+                Integrated modules empowering farmers to make data-driven decisions from seed to harvest.
+            </p>
         </div>
-        <div class="relative max-w-5xl py-20 md:py-26 mt-18 md:w-full overflow-hidden mx-2 md:mx-auto border border-indigo-900 flex flex-col md:flex-row items-center justify-between bg-gradient-to-br from-[#401B98]/5 to-[#180027]/10 rounded-3xl p-4 md:p-10 text-white">
-            <div class="absolute pointer-events-none top-10 -z-1 left-20 size-64 bg-gradient-to-br from-[#536DFF] to-[#4F39F6]/60 blur-[180px]"></div>
-            <div class="absolute pointer-events-none bottom-10 -z-1 right-20 size-64 bg-gradient-to-br from-[#536DFF] to-[#4F39F6]/60 blur-[180px]"></div>
-            <div class="flex flex-col items-center md:items-start max-md:text-center">
-                <a href="#!" class="group flex items-center gap-2 rounded-full text-sm p-1 pr-3 text-indigo-300 bg-indigo-200/15">
-                    <span class="bg-indigo-600 text-white text-xs px-3.5 py-1 rounded-full">NEW</span>
-                    <p class="flex items-center gap-1">
-                        <span>Try 30 days free trial option </span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right group-hover:translate-x-0.5 transition duration-300">
-                            <path d="m9 18 6-6-6-6"></path>
-                        </svg>
+
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+            <!-- Feature 1 -->
+            <div class="glass-card p-8 rounded-2xl glass-card-hover flex flex-col justify-between">
+                <div>
+                    <div class="size-12 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-6">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Asset-Based Agri-Financing</h3>
+                    <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+                        Access micro-loans, hydroponic equipment leasing, and harvest advances backed by crop yield verification data.
                     </p>
-                </a>
-                <h1 class="text-3xl font-medium max-w-xl mt-5 bg-gradient-to-r from-white to-[#b6abff] text-transparent bg-clip-text">
-                    Trusted by leading companies.
-                </h1>
-                <p class="text-base text-slate-400 max-w-lg mt-4">
-                    Built to help small and medium scale farmers to access agricultural information and resources, connect with experts, and improve their farming practices for better productivity and sustainability.
-                </p>
-                <button class="flex items-center gap-1 text-sm px-6 py-2.5 border border-indigo-400 hover:bg-indigo-300/10 active:scale-95 transition rounded-full mt-6">
-                    Read more
-                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.4243 5.42426C12.6586 5.18995 12.6586 4.81005 12.4243 4.57574L8.60589 0.757359C8.37157 0.523045 7.99167 0.523045 7.75736 0.757359C7.52304 0.991674 7.52304 1.37157 7.75736 1.60589L11.1515 5L7.75736 8.39411C7.52304 8.62843 7.52304 9.00833 7.75736 9.24264C7.99167 9.47696 8.37157 9.47696 8.60589 9.24264L12.4243 5.42426ZM0 5L0 5.6L12 5.6V5V4.4L0 4.4L0 5Z" fill="white"></path>
-                    </svg>
+                </div>
+                <div class="mt-6 pt-4 border-t border-emerald-900/30 flex items-center gap-2 text-xs font-semibold text-emerald-400">
+                    <span>Learn about credit scoring</span> &rarr;
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="glass-card p-8 rounded-2xl glass-card-hover flex flex-col justify-between">
+                <div>
+                    <div class="size-12 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-6">
+                        <i class="fa-solid fa-cow"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Livestock & Dairy Analytics</h3>
+                    <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+                        Automated vaccination scheduling, milk yield logging, and veterinary telemetry services for individual cows.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-emerald-900/30 flex items-center gap-2 text-xs font-semibold text-emerald-400">
+                    <span>Explore dairy module</span> &rarr;
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="glass-card p-8 rounded-2xl glass-card-hover flex flex-col justify-between">
+                <div>
+                    <div class="size-12 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-6">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Cash Crop AI Diagnostics</h3>
+                    <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+                        High-value crop advisory for avocados, coffee, tea, and maize with real-time pest identification photos.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-emerald-900/30 flex items-center gap-2 text-xs font-semibold text-emerald-400">
+                    <span>See diagnostic AI</span> &rarr;
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Trusted Partners & Down Photos FIX Section -->
+    <section class="py-20 px-6 md:px-16 lg:px-24 bg-emerald-950/20 border-y border-emerald-900/30">
+        <div class="max-w-6xl mx-auto flex flex-col items-center">
+            <div class="text-center max-w-xl">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/60 border border-emerald-800/40 px-3.5 py-1 rounded-full">Global Ecosystem</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mt-3">Trusted by Leading Agricultural Leaders</h2>
+            </div>
+
+            <!-- SVG & Visual Logos Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 w-full mt-10 items-center justify-items-center opacity-80">
+                <div class="glass-card px-4 py-3 rounded-xl flex items-center gap-2 border border-emerald-500/20 text-slate-300 font-semibold text-xs hover:opacity-100 hover:border-emerald-400 transition-all">
+                    <i class="fa-solid fa-tractor text-emerald-400 text-base"></i>
+                    <span>John Deere</span>
+                </div>
+                <div class="glass-card px-4 py-3 rounded-xl flex items-center gap-2 border border-emerald-500/20 text-slate-300 font-semibold text-xs hover:opacity-100 hover:border-emerald-400 transition-all">
+                    <i class="fa-solid fa-seedling text-emerald-400 text-base"></i>
+                    <span>Syngenta</span>
+                </div>
+                <div class="glass-card px-4 py-3 rounded-xl flex items-center gap-2 border border-emerald-500/20 text-slate-300 font-semibold text-xs hover:opacity-100 hover:border-emerald-400 transition-all">
+                    <i class="fa-solid fa-globe text-emerald-400 text-base"></i>
+                    <span>FAO UN</span>
+                </div>
+                <div class="glass-card px-4 py-3 rounded-xl flex items-center gap-2 border border-emerald-500/20 text-slate-300 font-semibold text-xs hover:opacity-100 hover:border-emerald-400 transition-all">
+                    <i class="fa-solid fa-vial-circle-check text-emerald-400 text-base"></i>
+                    <span>Yara Agri</span>
+                </div>
+                <div class="glass-card px-4 py-3 rounded-xl flex items-center gap-2 border border-emerald-500/20 text-slate-300 font-semibold text-xs hover:opacity-100 hover:border-emerald-400 transition-all">
+                    <i class="fa-solid fa-hand-holding-hand text-emerald-400 text-base"></i>
+                    <span>USAID</span>
+                </div>
+                <div class="glass-card px-4 py-3 rounded-xl flex items-center gap-2 border border-emerald-500/20 text-slate-300 font-semibold text-xs hover:opacity-100 hover:border-emerald-400 transition-all">
+                    <i class="fa-solid fa-chart-pie text-emerald-400 text-base"></i>
+                    <span>AgriWebb</span>
+                </div>
+            </div>
+
+            <!-- Free Trial Promotion Banner -->
+            <div class="relative w-full max-w-5xl mt-14 rounded-3xl p-8 sm:p-12 overflow-hidden glass-card border border-emerald-500/30 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="absolute -top-20 -left-20 size-64 bg-emerald-500/15 rounded-full blur-[100px] pointer-events-none"></div>
+                
+                <div class="flex flex-col items-start max-w-xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold mb-3">
+                        <span class="bg-emerald-500 text-black text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">NEW</span>
+                        <span>30-Day Risk-Free Trial Available</span>
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-white">Unlock Precision Farming for Your Acreage</h3>
+                    <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+                        Deploy smart IoT sensor telemetry, disease diagnostic AI, and automated weather alerts with 0 upfront hardware commitments.
+                    </p>
+                </div>
+
+                <button class="shrink-0 px-8 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-bold rounded-xl shadow-xl shadow-emerald-950/60 active:scale-95 transition-all flex items-center gap-2">
+                    <span>Claim Free Trial</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
                 </button>
             </div>
-            
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="flex flex-col items-center" id="contact">
-        <div class="flex flex-col items-center mt-32">
-            <h2 class="text-center text-4xl font-semibold max-w-2xl">
-                Get in 
-                <span class="bg-gradient-to-t from-indigo-600 to-black p-1 bg-left inline-block bg-no-repeat">
-                    touch
-                </span>
-            </h2>
-            
+    <!-- FAQ Accordion Section -->
+    <section class="py-24 px-6 md:px-16 lg:px-24 flex flex-col items-center" id="faq">
+        <div class="text-center max-w-xl">
+            <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/60 border border-emerald-800/40 px-3.5 py-1 rounded-full">Help Center</span>
+            <h2 class="text-3xl font-bold text-white mt-3">Frequently Asked Questions</h2>
         </div>
-        <form class="grid sm:grid-cols-2 gap-3 sm:gap-5 max-w-3xl mx-auto text-slate-400 mt-16 w-full">
-            <div>
-                <label class="font-medium text-slate-200">
-                    Your name
-                </label>
-                <input placeholder="Enter your name" class="w-full mt-2 p-3 outline-none border border-slate-700 rounded-lg focus-within:ring-1 transition focus:ring-indigo-600" type="text" name="name">
-            </div>
-            <div>
-                <label class="font-medium text-slate-200">
-                    Email id
-                </label>
-                <input placeholder="Enter your email" class="w-full mt-2 p-3 outline-none border border-slate-700 rounded-lg focus-within:ring-1 transition focus:ring-indigo-600" type="email" name="email">
-            </div>
-            <div class="sm:col-span-2">
-                <label class="font-medium text-slate-200">Message</label>
-                <textarea name="message" rows="8" placeholder="Enter your message" class="resize-none w-full mt-2 p-3 outline-none rounded-lg focus-within:ring-1 transition focus:ring-indigo-600 border border-slate-700"></textarea>
-            </div>
-            <button type="submit" class="w-max flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-full">
-                Submit
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right size-4.5" aria-hidden="true">
-                    <path d="M7 7h10v10"></path>
-                    <path d="M7 17 17 7"></path>
-                </svg>
-            </button>
-        </form>
-    </section>
 
-    <!-- Subscribe Section -->
-    <section class="flex flex-col items-center">
-        <div class="flex flex-col items-center mt-32">
-            <h2 class="text-center text-4xl font-semibold max-w-2xl">Subscribe 
-                <span class="bg-gradient-to-t from-indigo-600 to-black p-1 bg-left inline-block bg-no-repeat">newsletter</span></h2>
-            <p class="text-center text-slate-400 max-w-lg mt-3">Get meaningful updates and insights delivered straight to your inbox.</p>
-        </div>
-        <div class="flex items-center justify-center mt-10 border border-slate-700 focus-within:outline focus-within:outline-indigo-600 text-sm rounded-full h-14 max-w-xl w-full">
-            <input class="bg-transparent outline-none rounded-full px-4 h-full flex-1 placeholder:text-slate-400" placeholder="Enter your email address" type="text">
-            <button class="bg-indigo-600 text-white rounded-full h-11 mr-1 px-10 flex items-center justify-center hover:bg-indigo-700 active:scale-95 transition">
-                Subscribe
-            </button>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="px-6 md:px-16 lg:px-24 xl:px-32 w-full text-sm text-slate-400 mt-40">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14">
-            <div class="sm:col-span-2 lg:col-span-1">
-                
-                <p class="text-sm/7 mt-6">
-                    Our platform helps you learn modern agricultural techniques, connect with experts, and access resources to boost your farming success.
-                </p>
-            </div>
-            <div class="flex flex-col lg:items-center lg:justify-center">
-                <div class="flex flex-col text-sm space-y-2.5">
-                    <h2 class="font-semibold mb-5 text-white">Company</h2>
-                    <a class="hover:text-slate-500 transition" href="#">
-                        About us
-                    </a>
-                    <a class="hover:text-slate-500 transition" href="#">
-                        Careers <span class="text-xs text-white bg-indigo-600 rounded-md ml-2 px-2 py-1">We’re hiring!</span>
-                    </a>
-                    <a class="hover:text-slate-500 transition" href="#">
-                        Contact us
-                    </a>
-                    <a class="hover:text-slate-500 transition" href="#">
-                        Privacy policy
-                    </a>
+        <div class="max-w-3xl w-full mt-12 flex flex-col gap-4">
+            <div class="faq-item glass-card rounded-xl border border-emerald-900/40 overflow-hidden">
+                <button class="faq-question w-full p-5 text-left font-semibold text-white flex items-center justify-between gap-4">
+                    <span>How does AgriTech Pro connect with my existing soil sensors?</span>
+                    <i class="faq-icon fa-solid fa-chevron-down text-emerald-400 text-xs transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer hidden px-5 pb-5 text-slate-400 text-sm leading-relaxed border-t border-emerald-950/60 pt-3">
+                    AgriTech Pro supports standard LoRaWAN, Cellular NB-IoT, and Wi-Fi sensor gateways. Simply scan the QR code on your probe or gateway to link telemetry data directly to your dashboard.
                 </div>
             </div>
+
+            <div class="faq-item glass-card rounded-xl border border-emerald-900/40 overflow-hidden">
+                <button class="faq-question w-full p-5 text-left font-semibold text-white flex items-center justify-between gap-4">
+                    <span>Can I use the platform without active internet coverage?</span>
+                    <i class="faq-icon fa-solid fa-chevron-down text-emerald-400 text-xs transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer hidden px-5 pb-5 text-slate-400 text-sm leading-relaxed border-t border-emerald-950/60 pt-3">
+                    Yes! Our mobile app features offline sync mode. You can log livestock records, crop photos, and harvest logs without connectivity; your data syncs automatically once signal is restored.
+                </div>
+            </div>
+
+            <div class="faq-item glass-card rounded-xl border border-emerald-900/40 overflow-hidden">
+                <button class="faq-question w-full p-5 text-left font-semibold text-white flex items-center justify-between gap-4">
+                    <span>What crops and livestock species are supported by AI diagnostics?</span>
+                    <i class="faq-icon fa-solid fa-chevron-down text-emerald-400 text-xs transition-transform duration-300"></i>
+                </button>
+                <div class="faq-answer hidden px-5 pb-5 text-slate-400 text-sm leading-relaxed border-t border-emerald-950/60 pt-3">
+                    Our AI models support over 45 major regional crops (including Maize, Coffee, Tea, Avocado, Tomatoes, Rice, Wheat) and cattle, poultry, goats, and swine livestock telemetry.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Feedback Section -->
+    <section class="py-24 px-6 md:px-16 lg:px-24 border-t border-emerald-900/30" id="contact">
+        <div class="max-w-4xl mx-auto flex flex-col items-center">
+            <div class="text-center max-w-xl">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/60 border border-emerald-800/40 px-3.5 py-1 rounded-full">Get In Touch</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-3">Speak with an Agricultural Advisor</h2>
+                <p class="text-slate-400 text-sm mt-2">Have questions about IoT setup, enterprise plans, or micro-loan financing?</p>
+            </div>
+
+            <form id="contact-form" class="glass-card p-8 sm:p-10 rounded-2xl border border-emerald-500/20 w-full mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 relative">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Full Name</label>
+                    <input required placeholder="Jane Doe" type="text" name="name" class="w-full p-3.5 bg-emerald-950/40 border border-emerald-900/60 rounded-xl text-white outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all text-sm">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Email Address</label>
+                    <input required placeholder="jane@farm.com" type="email" name="email" class="w-full p-3.5 bg-emerald-950/40 border border-emerald-900/60 rounded-xl text-white outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all text-sm">
+                </div>
+
+                <div class="sm:col-span-2">
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Topic of Inquiry</label>
+                    <select name="topic" class="w-full p-3.5 bg-[#08221a] border border-emerald-900/60 rounded-xl text-white outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all text-sm">
+                        <option value="general">General Platform Information</option>
+                        <option value="hardware">IoT Soil Sensors & Hardware</option>
+                        <option value="finance">Micro-Loans & Asset Leasing</option>
+                        <option value="enterprise">Enterprise Partnership</option>
+                    </select>
+                </div>
+
+                <div class="sm:col-span-2">
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Message</label>
+                    <textarea required rows="4" placeholder="Tell us about your farm acreage and primary crops..." name="message" class="w-full p-3.5 bg-emerald-950/40 border border-emerald-900/60 rounded-xl text-white outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all text-sm resize-none"></textarea>
+                </div>
+
+                <div class="sm:col-span-2 flex items-center justify-between">
+                    <button type="submit" class="px-8 py-3.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold rounded-xl shadow-lg shadow-emerald-950/60 active:scale-95 transition-all flex items-center gap-2">
+                        <span>Send Message</span>
+                        <i class="fa-solid fa-paper-plane text-xs"></i>
+                    </button>
+                    <span class="text-xs text-slate-400">Response within 24 hours</span>
+                </div>
+            </form>
+
+            <!-- Toast Success Feedback -->
+            <div id="form-toast" class="fixed bottom-6 right-6 z-50 glass-card p-4 rounded-xl border border-emerald-400/40 text-emerald-300 text-sm font-semibold flex items-center gap-3 shadow-2xl opacity-0 pointer-events-none transition-all duration-300">
+                <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+                <span>Message submitted successfully! An advisor will reach out shortly.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#030a08] border-t border-emerald-900/40 pt-16 pb-12 px-6 md:px-16 lg:px-24">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div class="md:col-span-2 flex flex-col justify-between">
+                <div>
+                    <a href="#" class="flex items-center gap-3">
+                        <div class="size-9 rounded-xl bg-emerald-500 flex items-center justify-center text-black font-bold">
+                            <i class="fa-solid fa-leaf text-base"></i>
+                        </div>
+                        <span class="text-xl font-bold text-white">AgriTech PRO</span>
+                    </a>
+                    <p class="text-slate-400 text-sm mt-4 max-w-sm leading-relaxed">
+                        Transforming global agriculture through AI precision intelligence, smart telemetry sensors, and accessible financial tools for sustainable farming communities.
+                    </p>
+                </div>
+                <div class="flex items-center gap-4 mt-6 text-slate-400">
+                    <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+                    <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                    <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fa-brands fa-facebook text-lg"></i></a>
+                    <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fa-brands fa-youtube text-lg"></i></a>
+                </div>
+            </div>
+
             <div>
-                <h2 class="font-semibold text-white mb-5">Subscribe to our newsletter</h2>
-                <div class="text-sm space-y-6 max-w-sm">
-                    <p>The latest news, articles, and resources, sent to your inbox weekly.</p>
-                    <div class="flex items-center justify-center gap-2 p-2 rounded-md bg-slate-900">
-                        <input class="outline-none w-full max-w-64 py-2 rounded px-2" placeholder="Enter your email" type="email">
-                        <button class="bg-indigo-600 px-4 py-2 text-white rounded">
-                            Subscribe
-                        </button>
+                <h4 class="text-white font-semibold text-sm mb-4">Quick Navigation</h4>
+                <ul class="space-y-2.5 text-sm text-slate-400">
+                    <li><a href="#creations" class="hover:text-emerald-400 transition-colors">Portfolio Creations</a></li>
+                    <li><a href="#about" class="hover:text-emerald-400 transition-colors">Core Solutions</a></li>
+                    <li><a href="#impact" class="hover:text-emerald-400 transition-colors">Impact Metrics</a></li>
+                    <li><a href="#faq" class="hover:text-emerald-400 transition-colors">Help & FAQ</a></li>
+                    <li><a href="#contact" class="hover:text-emerald-400 transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-semibold text-sm mb-4">Weekly Insights</h4>
+                <p class="text-slate-400 text-xs mb-3">Get precision farming reports and weather alerts weekly.</p>
+                <form onsubmit="event.preventDefault(); alert('Subscribed to AgriTech Pro Weekly Insights!');" class="flex flex-col gap-2">
+                    <input required type="email" placeholder="Enter your email" class="p-2.5 bg-emerald-950/60 border border-emerald-900/60 rounded-lg text-xs text-white outline-none focus:border-emerald-500">
+                    <button type="submit" class="py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-lg text-xs transition-colors">
+                        Subscribe Now
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto border-t border-emerald-900/30 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+            <p>Copyright 2026 &copy; AgriTech Pro. All Rights Reserved.</p>
+            <div class="flex items-center gap-6">
+                <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+                <a href="#" class="hover:text-slate-400">Terms of Service</a>
+                <a href="#" class="hover:text-slate-400">Security Audit</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Demo Modal Popup -->
+    <div id="demo-modal" class="fixed inset-0 z-[200] bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="glass-card max-w-3xl w-full rounded-2xl overflow-hidden border border-emerald-500/30 flex flex-col relative animate-float">
+            <div class="p-4 bg-emerald-950/80 border-b border-emerald-900/40 flex items-center justify-between">
+                <div class="flex items-center gap-2 text-emerald-400 text-sm font-bold">
+                    <i class="fa-solid fa-circle-play"></i>
+                    <span>AgriTech Pro Interactive Dashboard Tour</span>
+                </div>
+                <button id="close-demo-modal" class="text-slate-400 hover:text-white p-1 rounded-lg">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div class="p-6 bg-slate-950 flex flex-col items-center justify-center text-center">
+                <div class="relative w-full aspect-video rounded-xl overflow-hidden border border-emerald-900/60 bg-emerald-950/40 flex flex-col items-center justify-center">
+                    <img class="w-full h-full object-cover opacity-60" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=1000&auto=format&fit=crop" alt="Demo preview">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center p-6 bg-black/40">
+                        <div class="size-16 rounded-full bg-emerald-500 text-black flex items-center justify-center text-2xl shadow-xl animate-pulse cursor-pointer">
+                            <i class="fa-solid fa-play ml-1"></i>
+                        </div>
+                        <h4 class="text-white font-bold text-lg mt-4">Platform Walkthrough & Hardware Pairing</h4>
+                        <p class="text-slate-300 text-xs mt-1 max-w-md">See how soil sensor data connects to AI crop recommendations in under 120 seconds.</p>
                     </div>
                 </div>
             </div>
         </div>
-        <p class="py-4 text-center border-t mt-6 border-slate-700">
-            Copyright 2026 © <a href="https://prebuiltui.com/"></a> All Right Reserved. Distributed by <a href="https://themewagon.com/" target="_blank">young ceo</a>
-        </p>
-    </footer>
+    </div>
+
     <script src="./script.js"></script>
 </body>
 
